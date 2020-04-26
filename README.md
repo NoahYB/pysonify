@@ -22,3 +22,5 @@ Things I need to work on:
 	making the measures render based on the fullness of the previous measure 
 	getting rid of weird grey rests(in Musescore go to view and uncheck show invisible)
 	making sure it will work with different types of csv
+
+requires pandas and ly.musicxml modules.
