@@ -19,6 +19,6 @@ You will need a music score editing software to load the xml into a score
 the xml is saved in the folder and titled "your_generated_score.xml"
 
 Things I need to work on:
-	making the measures render based on the fullness of the previous measure
-	getting rid of weird grey rests
+	making the measures render based on the fullness of the previous measure 
+	getting rid of weird grey rests(in Musescore go to view and uncheck show invisible)
 	making sure it will work with different types of csv
