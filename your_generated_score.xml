@@ -10,21 +10,21 @@
   </identification>
   <part-list>
     <score-part id="P1">
-      <part-name>unnamed</part-name>
+      <part-name />
     </score-part>
   </part-list>
   <part id="P1">
     <measure number="1">
       <attributes>
         <divisions>1</divisions>
-        <key>
-          <fifths>0</fifths>
-          <mode>0</mode>
-        </key>
         <time>
           <beats>4</beats>
           <beat-type>4</beat-type>
         </time>
+        <clef>
+          <sign>G</sign>
+          <line>2</line>
+        </clef>
       </attributes>
       <note>
         <pitch>
@@ -64,13 +64,10 @@
         </pitch>
         <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>eighth</type>
       </note>
     </measure>
     <measure number="2">
-      <attributes>
-        <divisions>1</divisions>
-      </attributes>
       <note>
         <pitch>
           <step>A</step>
@@ -88,7 +85,7 @@
         </pitch>
         <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>eighth</type>
         <accidental>sharp</accidental>
       </note>
       <note>
@@ -99,7 +96,7 @@
         </pitch>
         <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>eighth</type>
         <accidental>sharp</accidental>
       </note>
       <note>
@@ -109,13 +106,10 @@
         </pitch>
         <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>whole</type>
       </note>
     </measure>
     <measure number="3">
-      <attributes>
-        <divisions>1</divisions>
-      </attributes>
       <note>
         <pitch>
           <step>G</step>
@@ -123,7 +117,7 @@
         </pitch>
         <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>eighth</type>
       </note>
       <note>
         <pitch>
@@ -133,7 +127,7 @@
         </pitch>
         <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>eighth</type>
         <accidental>sharp</accidental>
       </note>
       <note>
@@ -158,9 +152,6 @@
       </note>
     </measure>
     <measure number="4">
-      <attributes>
-        <divisions>1</divisions>
-      </attributes>
       <note>
         <pitch>
           <step>F</step>
@@ -169,7 +160,7 @@
         </pitch>
         <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>eighth</type>
         <accidental>sharp</accidental>
       </note>
       <note>
@@ -191,7 +182,7 @@
         </pitch>
         <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>eighth</type>
         <accidental>sharp</accidental>
       </note>
       <note>
@@ -202,14 +193,11 @@
         </pitch>
         <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>eighth</type>
         <accidental>sharp</accidental>
       </note>
     </measure>
     <measure number="5">
-      <attributes>
-        <divisions>1</divisions>
-      </attributes>
       <note>
         <pitch>
           <step>C</step>
@@ -218,7 +206,7 @@
         </pitch>
         <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>eighth</type>
         <accidental>sharp</accidental>
       </note>
       <note>
@@ -247,14 +235,11 @@
         </pitch>
         <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>eighth</type>
         <accidental>sharp</accidental>
       </note>
     </measure>
     <measure number="6">
-      <attributes>
-        <divisions>1</divisions>
-      </attributes>
       <note>
         <pitch>
           <step>D</step>
@@ -263,7 +248,7 @@
         </pitch>
         <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>eighth</type>
         <accidental>sharp</accidental>
       </note>
       <note>
@@ -274,7 +259,7 @@
         </pitch>
         <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>eighth</type>
         <accidental>sharp</accidental>
       </note>
       <note>
@@ -297,9 +282,6 @@
       </note>
     </measure>
     <measure number="7">
-      <attributes>
-        <divisions>1</divisions>
-      </attributes>
       <note>
         <pitch>
           <step>E</step>
@@ -307,7 +289,7 @@
         </pitch>
         <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>eighth</type>
       </note>
       <note>
         <pitch>
@@ -326,7 +308,7 @@
         </pitch>
         <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>eighth</type>
         <accidental>sharp</accidental>
       </note>
       <note>
@@ -340,9 +322,6 @@
       </note>
     </measure>
     <measure number="8">
-      <attributes>
-        <divisions>1</divisions>
-      </attributes>
       <note>
         <pitch>
           <step>A</step>
@@ -362,7 +341,7 @@
         </pitch>
         <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>eighth</type>
         <accidental>sharp</accidental>
       </note>
       <note>
@@ -373,7 +352,7 @@
         </pitch>
         <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>half</type>
         <accidental>sharp</accidental>
       </note>
       <note>
@@ -383,13 +362,10 @@
         </pitch>
         <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>eighth</type>
       </note>
     </measure>
     <measure number="9">
-      <attributes>
-        <divisions>1</divisions>
-      </attributes>
       <note>
         <pitch>
           <step>E</step>
@@ -397,7 +373,7 @@
         </pitch>
         <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>eighth</type>
       </note>
       <note>
         <pitch>
@@ -407,7 +383,7 @@
         </pitch>
         <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>eighth</type>
         <accidental>sharp</accidental>
       </note>
       <note>
@@ -417,7 +393,7 @@
         </pitch>
         <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>half</type>
       </note>
       <note>
         <pitch>
@@ -426,13 +402,10 @@
         </pitch>
         <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>eighth</type>
       </note>
     </measure>
     <measure number="10">
-      <attributes>
-        <divisions>1</divisions>
-      </attributes>
       <note>
         <pitch>
           <step>G</step>
@@ -471,13 +444,10 @@
         </pitch>
         <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
+        <type>eighth</type>
       </note>
     </measure>
     <measure number="11">
-      <attributes>
-        <divisions>1</divisions>
-      </attributes>
       <note>
         <pitch>
           <step>G</step>

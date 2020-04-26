@@ -1,9 +1,8 @@
 #########SOUNDSCAPESFINALPROJECT################
-import matplotlib
-import csv
+import statistics
 import pandas as pd
 import sys
-import ly.musicxml.create_musicxml as create_musicxml
+from ly.musicxml import create_musicxml, xml_objs
 
 ##loads csv as panda object and returns it given various parameters##
 class data_to_assignment:
@@ -32,13 +31,11 @@ class data_to_assignment:
 
         ##get this from sys args
         self.range_of_notes = int(range_of_notes)
-
-        self.diatonic = diatonic
-
         if(diatonic == "false"):
             self.notes = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B']
         else:
             self.notes = ['C','D','E','F','G','A','B']
+        self.note_divisions = ['eighth','quarter','half','whole']
     def load_and_return_csv(self,path,has_header):
         if(has_header): self.parsed_data = pd.read_csv(path)
         else: self.parsed_data = pd.read_csv(path,header = None)
@@ -91,12 +88,21 @@ class data_to_assignment:
         ## Error check to make sure every note has been assigned
         assert (number_of_items == len(self.assignments)),\
         "Failed to assign all data to note index sorry this is not your fault try different data"
-
-    def assign_data_to_meter(self):
+    ##get avg distance between two x points
+    def find_avg_distance_in_x(self):
+        a = []
         for j in range(len(self.assignments)):
             if(j+1 <len(self.assignments)):
-                ...
-                #print(self.assignments[j+1][2]-self.assignments[j][2])
+                a.append(self.assignments[j+1][2]-self.assignments[j][2])
+        return statistics.mean(a)
+    
+    def assign_data_to_meter(self):
+        avg = self.find_avg_distance_in_x()
+        for j in range(len(self.assignments)):
+            if(j+1 < len(self.assignments)):
+                self.assignments[j].append(self.note_divisions[int(avg/(self.assignments[j+1][2]\
+                -self.assignments[j][2])%len(self.note_divisions))])
+
     def get_octave(self,assignment_val,note_length):
         return int(assignment_val/note_length)
         
@@ -104,33 +110,52 @@ class data_to_assignment:
         self.assign_data_to_note()
         self.assign_data_to_meter()
         musxml = create_musicxml.CreateMusicXML()
-        musxml.create_part()
+
+        score = xml_objs.Score()
+        part = xml_objs.ScorePart()
+        score.partlist.append(part)
+        bar = xml_objs.Bar()
+        part.barlist.append(bar)
+        ba = xml_objs.BarAttr()
+        ba.set_time([4,4])
+        bar.obj_list.append(ba)
         
-        musxml.create_measure(mustime = [4,4], key = 0, divs=1)
         index = 0;
         for j in range(len(self.assignments)):
             index = index+1
-            print(self.assignments[j][1])
+            #print(self.assignments[j][1])
             if(j+1 <len(self.assignments)):
                 if(len(self.notes[self.assignments[j][1]%(len(self.notes))]) > 1):
-                    musxml.new_note(self.notes[(self.assignments[j][1]%(len(self.notes)))-1],\
-                    4 + (self.get_octave(self.assignments[j][1],(len(self.notes)))),\
-                    'quarter',4,1)
+                    
+                    new_note = xml_objs.BarNote(self.notes[self.assignments[j][1]%(len(self.notes))-1],1,0,(1,1))
+                    
+                    new_note.set_octave(4 + (self.get_octave(self.assignments[j][1],(len(self.notes)))))
+
+                    new_note.set_durtype(self.assignments[j][3])
+                
+                    bar.obj_list.append(new_note)
                 else:
-                    musxml.new_note(self.notes[self.assignments[j][1]%(len(self.notes))],\
-                    4 + (self.get_octave(self.assignments[j][1],(len(self.notes)))),\
-                    'quarter',4)
+                    
+                    new_note = xml_objs.BarNote(self.notes[self.assignments[j][1]%(len(self.notes))],0,0,(1,1))
+                    
+                    new_note.set_octave(4 + (self.get_octave(self.assignments[j][1],(len(self.notes)))))
+
+                    new_note.set_durtype(self.assignments[j][3])
+                
+                    bar.obj_list.append(new_note)
+                    
             if(index%4 == 0):
-                musxml.create_measure(divs=1)
+                bar = xml_objs.Bar()
+                part.barlist.append(bar)
+                ba = xml_objs.BarAttr()
+                bar.obj_list.append(ba)
             
             
+        xml_objs.IterateXmlObjs(score,musxml,1)
         xml = musxml.musicxml()
-        
         xml.write('your_generated_score.xml')
         
         return self.assignments
         
-new_new = data_to_assignment(sys.argv[1],False,sys.argv[2],sys.argv[3])
+new_new = data_to_assignment("LilyBloomData.csv",False,sys.argv[1],sys.argv[2])
 new_new.give_me_the_data()
-
-
