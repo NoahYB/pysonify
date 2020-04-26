@@ -157,5 +157,5 @@ class data_to_assignment:
         
         return self.assignments
         
-new_new = data_to_assignment("LilyBloomData.csv",False,sys.argv[1],sys.argv[2])
+new_new = data_to_assignment(sys.argv[1],False,sys.argv[2],sys.argv[3])
 new_new.give_me_the_data()
