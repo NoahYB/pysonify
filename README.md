@@ -20,4 +20,4 @@ the xml is saved in the folder and titled "your_generated_score.xml"
 
 Things I need to work on:
 	getting rid of weird grey rests
-	implementing different note divisions
+	making sure it will work with different types of csv
