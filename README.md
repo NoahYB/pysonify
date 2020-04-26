@@ -8,6 +8,9 @@ to sample outside of the key of c)
 
 To use (on mac) go to terminal
 cd to the folder
+
+to install the dependencies neccesary run pip install -r requirements.txt
+
 type into terminal(without quotations) python3 datasonifier.py path_to_csv divisions_you_want true_or_false
 
 to use the data in the folder copy and paste this into terminal with parameters I know work
